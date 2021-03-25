@@ -4,6 +4,10 @@
   "description": "An analytics wrapper for front end Harness applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+      "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "bash scripts/github-package-registry.sh",
@@ -11,20 +15,20 @@
   },
   "author": "Nathan Nguyen",
   "license": "UNLICENSED",
+  "dependencies": {
+    "@segment/analytics.js-core": "4.0.1",
+    "@segment/analytics.js-integration-segmentio": "4.2.5",
+    "uuid": "3.4.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/eslint-plugin": "4.19.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
-    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^5.2.0",
     "prettier": "^2.2.1",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0"
-  },
-  "dependencies": {
-    "@segment/analytics.js-core": "^4.1.8",
-    "@segment/analytics.js-integration-segmentio": "^4.4.1-debug-3"
   }
 }

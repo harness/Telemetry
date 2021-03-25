@@ -343,13 +343,14 @@
   dependencies:
     component-querystring "^2.0.0"
 
-"@segment/analytics.js-core@^4.1.8":
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/@segment/analytics.js-core/-/analytics.js-core-4.1.8.tgz#4476b1f760b8887a8319efa3303ab65b80cfb1a4"
-  integrity sha512-2qEUVR8M38+imqRIRh+NBG7S4cvLaY9jZSanYis6SWB7MEd3cByAcknv4O+Oc0rwW0aXpCtXpJ4IzcD+jqwcJA==
+"@segment/analytics.js-core@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@segment/analytics.js-core/-/analytics.js-core-4.0.1.tgz#79b9d572ac14d91576e3f9b188adb721ad7d6b01"
+  integrity sha512-o7skUVCvojFZzA4+Zmqx84TuThv72cK6PIjnkxbwUTkxXr6ij2qs4c47g3vqDYnuVnttoNpnhKH1OS7OqiW5tA==
   dependencies:
     "@ndhoule/defaults" "^2.0.1"
     "@ndhoule/extend" "^2.0.0"
+    "@ndhoule/foldl" "^2.0.1"
     "@ndhoule/includes" "^2.0.1"
     "@ndhoule/keys" "^2.0.0"
     "@ndhoule/pick" "^2.0.0"
@@ -368,7 +369,7 @@
     component-querystring "^2.0.0"
     component-type "^1.2.1"
     component-url "^0.2.1"
-    debug "^2.6.9"
+    debug "^0.7.4"
     extend "3.0.2"
     inherits "^2.0.1"
     install "^0.7.3"
@@ -380,10 +381,10 @@
     spark-md5 "^2.0.2"
     uuid "^3.4.0"
 
-"@segment/analytics.js-integration-segmentio@^4.4.1-debug-3":
-  version "4.4.1-debug-3"
-  resolved "https://registry.yarnpkg.com/@segment/analytics.js-integration-segmentio/-/analytics.js-integration-segmentio-4.4.1-debug-3.tgz#b74fd237e9231e98fd24cc84354a9a318dcc1912"
-  integrity sha512-KDCvmmI70B6On67GbSl0y3y6UXrnGUXpQQp77h5KTrj9ENIl/+C97isIuWtzK7LMLcYATN1ghL3ERzugHnvGmQ==
+"@segment/analytics.js-integration-segmentio@4.2.5":
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/@segment/analytics.js-integration-segmentio/-/analytics.js-integration-segmentio-4.2.5.tgz#278627a80685f26abc736cb85c8d9beea25e5624"
+  integrity sha512-bJH+x7VYQoYBkEaM0ZdsQnqA0f5GFmq/PnxtAQZovSg0pARdD3ACXjyXXqNKoJZwrQVH3jVDy3r+YjB3XFs59A==
   dependencies:
     "@ndhoule/extend" "^2.0.0"
     "@ndhoule/keys" "^2.0.0"
@@ -574,7 +575,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
   integrity sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
 
-"@typescript-eslint/eslint-plugin@^4.19.0":
+"@typescript-eslint/eslint-plugin@4.19.0":
   version "4.19.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.19.0.tgz#56f8da9ee118fe9763af34d6a526967234f6a7f0"
   integrity sha512-CRQNQ0mC2Pa7VLwKFbrGVTArfdVDdefS+gTw0oC98vSI98IX5A8EVH4BzJ2FOB0YlCmm8Im36Elad/Jgtvveaw==
@@ -1188,9 +1189,9 @@ domify@^1.4.0:
   integrity sha1-EUg2F/dk+GlZdbS9x5sU8IA7Yps=
 
 electron-to-chromium@^1.3.649:
-  version "1.3.698"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.698.tgz#5de813960f23581a268718a0058683dffa15d221"
-  integrity sha512-VEXDzYblnlT+g8Q3gedwzgKOso1evkeJzV8lih7lV8mL8eAnGVnKyC3KsFT6S+R5PQO4ffdr1PI16/ElibY/kQ==
+  version "1.3.699"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.699.tgz#854eea9db8bc8109c409a4807bfdb200dd75a2c7"
+  integrity sha512-fjt43CPXdPYwD9ybmKbNeLwZBmCVdLY2J5fGZub7/eMPuiqQznOGNXv/wurnpXIlE7ScHnvG9Zi+H4/i6uMKmw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1282,17 +1283,6 @@ eslint-import-resolver-node@^0.3.4:
   dependencies:
     debug "^2.6.9"
     resolve "^1.13.1"
-
-eslint-import-resolver-typescript@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-2.4.0.tgz#ec1e7063ebe807f0362a7320543aaed6fe1100e1"
-  integrity sha512-useJKURidCcldRLCNKWemr1fFQL1SzB3G4a0li6lFGvlc5xGe1hY343bvG07cbpCzPuM/lK19FIJB3XGFSkplA==
-  dependencies:
-    debug "^4.1.1"
-    glob "^7.1.6"
-    is-glob "^4.0.1"
-    resolve "^1.17.0"
-    tsconfig-paths "^3.9.0"
 
 eslint-module-utils@^2.6.0:
   version "2.6.0"
@@ -1584,7 +1574,7 @@ glob-to-regexp@^0.4.1:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
 
-glob@^7.1.3, glob@^7.1.6:
+glob@^7.1.3:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -2764,15 +2754,15 @@ utf8-encode@1:
   resolved "https://registry.yarnpkg.com/utf8-encode/-/utf8-encode-1.0.0.tgz#3ad61542bc1da8a2723c82d20617d21b64b0d0d4"
   integrity sha1-OtYVQrwdqKJyPILSBhfSG2Sw0NQ=
 
+uuid@3.4.0, uuid@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
 uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
   integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
-
-uuid@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
-  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.2.0:
   version "2.3.0"

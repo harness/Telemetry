@@ -9,14 +9,11 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint/eslint-plugin"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "prettier"
   ],
   "env": {
     "browser": true,

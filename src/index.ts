@@ -1,2 +1,5 @@
+import HarnessTelemetry from './HarnessTelemetry'
 
-console.log('This is harness-telemetry')
+const Telemetry = new HarnessTelemetry()
+
+export default Telemetry
