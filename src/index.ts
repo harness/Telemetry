@@ -1,5 +1,3 @@
-import HarnessTelemetry from './HarnessTelemetry'
-
-const Telemetry = new HarnessTelemetry()
+import Telemetry from './HarnessTelemetry'
 
 export default Telemetry
