@@ -60,4 +60,6 @@ class HarnessTelemetry {
   }
 }
 
-export default HarnessTelemetry
+const Telemetry = new HarnessTelemetry()
+
+export { Telemetry }
