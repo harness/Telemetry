@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/telemetry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An analytics wrapper for front end Harness applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "yarn; yarn ui:build; yarn ui:build:types; yarn types:copy",
-    "postinstall": "yarn husky install",
+    "postinstall": "is-ci || yarn husky install",
     "setup": "bash scripts/github-package-registry.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "types:copy": "echo 'Adhoc type copy...'; mv dist/types/src/* dist/; rm -rf dist/types",
@@ -39,6 +39,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^5.2.0",
+    "is-ci": "^3.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "ts-loader": "^8.0.18",
