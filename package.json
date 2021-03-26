@@ -23,6 +23,7 @@
   },
   "author": "Nathan Nguyen",
   "license": "UNLICENSED",
+  "repository": "https://github.com/wings-software/Telemetry",
   "dependencies": {
     "@segment/analytics.js-core": "4.0.1",
     "@segment/analytics.js-integration-segmentio": "4.2.5",
