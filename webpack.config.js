@@ -21,8 +21,9 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'commonjs'
   },
   resolve: {
     extensions: ['.js', '.ts']
