@@ -9,9 +9,14 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn ui:build; yarn ui:build:types; yarn types:copy",
+    "postinstall": "yarn husky install",
     "setup": "bash scripts/github-package-registry.sh",
-    "postinstall": "yarn husky install"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "types:copy": "echo 'Adhoc type copy...'; mv dist/types/src/* dist/; rm -rf dist/types",
+    "ui:build": "NODE_ENV=production webpack",
+    "ui:build:types": "tsc --emitDeclarationOnly --declarationDir ./dist/",
+    "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/"
   },
   "author": "Nathan Nguyen",
   "license": "UNLICENSED",
@@ -22,14 +27,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
     "@typescript-eslint/eslint-plugin": "4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "ts-loader": "^8.0.18",
     "typescript": "^4.2.3",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0"

@@ -5,6 +5,6 @@ interface Properties {
 }
 
 export default interface Track {
-  event: defaultSource
+  event: EventNames.defaultSource
   properties: Properties
 }
