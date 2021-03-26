@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn ui:build; yarn ui:build:types; yarn types:copy",
+    "build": "yarn; yarn ui:build; yarn ui:build:types; yarn types:copy",
     "postinstall": "yarn husky install",
     "setup": "bash scripts/github-package-registry.sh",
     "test": "echo \"Error: no test specified\" && exit 1",

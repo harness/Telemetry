@@ -1,6 +1,7 @@
 _
 
 package-lock.json
+dist/*
 
 # Dependency directories
 node_modules/
