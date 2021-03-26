@@ -18,6 +18,9 @@
     "ui:build:types": "tsc --emitDeclarationOnly --declarationDir ./dist/",
     "ui:types": "tsc --emitDeclarationOnly --watch --declarationDir ./docs/static/"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Nathan Nguyen",
   "license": "UNLICENSED",
   "dependencies": {
