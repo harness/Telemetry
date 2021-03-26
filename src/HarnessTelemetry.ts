@@ -60,4 +60,4 @@ class HarnessTelemetry {
   }
 }
 
-export default HarnessTelemetry
+export { HarnessTelemetry }
