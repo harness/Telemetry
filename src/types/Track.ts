@@ -1,4 +1,4 @@
-import * as EventNames from 'types/EventNames'
+import * as EventNames from './EventNames'
 
 interface Properties {
   [key: string]: string

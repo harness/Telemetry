@@ -1,5 +1,5 @@
-import * as PageNames from 'types/PageNames'
-import * as CategoryNames from 'types/CategoryNames'
+import * as PageNames from './PageNames'
+import * as CategoryNames from './CategoryNames'
 
 interface Properties {
   [key: string]: string
