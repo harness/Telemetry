@@ -1,0 +1,1 @@
+{"version":3,"file":"Track.d.ts","sourceRoot":"","sources":["../../src/types/Track.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,UAAU,MAAM,kBAAkB,CAAA;AAE9C,UAAU,UAAU;IAClB,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAAA;CACtB;AAED,MAAM,CAAC,OAAO,WAAW,KAAK;IAC5B,KAAK,EAAE,UAAU,CAAC,aAAa,CAAA;IAC/B,UAAU,EAAE,UAAU,CAAA;CACvB"}
