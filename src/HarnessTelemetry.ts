@@ -1,30 +1,38 @@
-import { SegmentAnalytics } from '@segment/analytics.js-core'
-import getNewAnalytics from './SegmentAnalytics'
-import integration from './SegmentIntegration'
 import Track from './types/Track'
 import Page from './types/Page'
 
-class HarnessTelemetry {
-  analytics: SegmentAnalytics.AnalyticsJS
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    analytics: any
+  }
+}
+
+function isInitialized(): boolean {
+  return typeof window.analytics !== 'undefined' && typeof window.analytics?.initialize !== 'undefined'
+}
+
+export default class HarnessTelemetry {
+  analytics: Window['analytics']
   initialized: boolean
+  statusInterval?: number
 
   constructor() {
-    this.analytics = getNewAnalytics()
-    this.analytics.use(integration)
-    this.initialized = false
+    this.analytics = window.analytics
+    this.initialized = isInitialized()
+
+    if (!this.initialized && typeof window !== 'undefined') {
+      this.statusInterval = window.setInterval(this.updateInitializedStatus, 1000)
+    }
   }
 
-  initialize(writeKey?: string): void {
-    const integrationSettings = {
-      'Segment.io': {
-        apiKey: writeKey || 'Exm5NxARVDS59iIK5o3KTq0LeUik92WA',
-        retryQueue: true,
-        addBundledMetadata: true
-      }
+  updateInitializedStatus(): void {
+    if (isInitialized()) {
+      this.initialized = true
+      this.analytics = window.analytics
     }
 
-    this.analytics.initialize(integrationSettings)
-    this.initialized = true
+    clearInterval(this.statusInterval)
   }
 
   checkInitialized(): boolean {
@@ -33,7 +41,7 @@ class HarnessTelemetry {
     }
 
     // eslint-disable-next-line no-console
-    console.error('Initialize the telemetry package before calling analytics methods')
+    console.error('The telemetry package needs to be initialized before calling analytics methods')
 
     return false
   }
@@ -59,7 +67,3 @@ class HarnessTelemetry {
     }
   }
 }
-
-const Telemetry = new HarnessTelemetry()
-
-export default Telemetry
