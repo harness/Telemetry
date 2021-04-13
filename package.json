@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/telemetry",
-  "version": "1.0.13",
+  "version": "1.0.17",
   "description": "An analytics wrapper for front end Harness applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -24,11 +24,6 @@
   "author": "Nathan Nguyen",
   "license": "UNLICENSED",
   "repository": "https://github.com/wings-software/Telemetry",
-  "dependencies": {
-    "@segment/analytics.js-core": "4.0.1",
-    "@segment/analytics.js-integration-segmentio": "4.2.5",
-    "uuid": "3.4.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
