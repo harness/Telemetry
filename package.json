@@ -1,6 +1,6 @@
 {
   "name": "@wings-software/telemetry",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "An analytics wrapper for front end Harness applications",
   "source": "src/index.ts",
   "main": "dist/index.js",

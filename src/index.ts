@@ -26,6 +26,23 @@ export default class Telemetry {
     }
   }
 
+  augmentProperties(properties: { [key: string]: string }): { [key: string]: string } {
+    const accountId = localStorage.getItem('acctId')
+
+    if (accountId) {
+      return {
+        ...properties,
+        url: window.location.href,
+        accountId
+      }
+    }
+
+    return {
+      ...properties,
+      url: window.location.href
+    }
+  }
+
   updateInitializedStatus(): void {
     if (isInitialized()) {
       this.initialized = true
@@ -56,14 +73,19 @@ export default class Telemetry {
     if (this.checkInitialized()) {
       const { event, properties } = track
 
-      this.analytics.track(event, properties, {}, {})
+      const augmentedProperties = this.augmentProperties(properties)
+
+      this.analytics.track(event, augmentedProperties, {}, {})
     }
   }
 
   page(page: Page): void {
     if (this.checkInitialized()) {
       const { name, category, properties } = page
-      this.analytics.page(category, name, properties, {}, {})
+
+      const augmentedProperties = this.augmentProperties(properties)
+
+      this.analytics.page(category, name, augmentedProperties, {}, {})
     }
   }
 }
