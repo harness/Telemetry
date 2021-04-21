@@ -30,6 +30,8 @@ export default class Telemetry {
 
     if (!this.initialized && typeof window !== 'undefined') {
       this.statusInterval = window.setInterval(this.updateInitializedStatus, 1000)
+      // eslint-disable-next-line no-console
+      console.log('statusInterval', this.statusInterval)
     }
   }
 
@@ -53,7 +55,11 @@ export default class Telemetry {
   }
 
   updateInitializedStatus(): void {
+    // eslint-disable-next-line no-console
+    console.log(this.initialized, this.statusInterval, window.analytics, isInitialized())
     if (isInitialized()) {
+      // eslint-disable-next-line no-console
+      console.log('here')
       this.initialized = true
       this.analytics = window.analytics
       clearInterval(this.statusInterval)
@@ -61,6 +67,8 @@ export default class Telemetry {
   }
 
   checkInitialized(): boolean {
+    // eslint-disable-next-line no-console
+    console.log(this.initialized, window.analytics)
     if (this.initialized) {
       return true
     }
