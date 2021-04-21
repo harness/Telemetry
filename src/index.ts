@@ -56,9 +56,8 @@ export default class Telemetry {
     if (isInitialized()) {
       this.initialized = true
       this.analytics = window.analytics
+      clearInterval(this.statusInterval)
     }
-
-    clearInterval(this.statusInterval)
   }
 
   checkInitialized(): boolean {
