@@ -89,9 +89,4 @@ export default function initializeAnalytics(sourceKey: string): void {
   // Load Analytics.js with your key, which will automatically
   // load the tools you've enabled for your account. Boosh!
   analytics.load(sourceKey)
-
-  // Make the first page call to load the integrations. If
-  // you'd like to manually name or tag the page, edit or
-  // move this call however you'd like.
-  analytics.page()
 }

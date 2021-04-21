@@ -19,5 +19,6 @@
     "strict": true,
     "allowJs": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "devtool": "inline-source-map"
 }
