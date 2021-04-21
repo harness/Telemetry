@@ -53,6 +53,8 @@ export default class Telemetry {
   }
 
   updateInitializedStatus(): void {
+    // eslint-disable-next-line no-console
+    console.log(this.initialized, this.statusInterval, window.analytics)
     if (isInitialized()) {
       this.initialized = true
       this.analytics = window.analytics
