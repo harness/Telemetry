@@ -7,13 +7,21 @@ This allows consumers to avoid implementing and duplicating their own analytics 
 
 [Design](https://harness.atlassian.net/wiki/spaces/GTM/pages/1484652596/Telemetry+Framework+Frontend)
 
-## Getting Started
+## Local Development
 
 1. Install the dependencies
 
 ```
 $ yarn
 ```
+
+2. Add the package to your repo
+
+```
+yarn add file:./../harness-telemetry // The path to your repo
+```
+
+3. Follow the steps in "Using this package"
 
 ## Using this package
 
