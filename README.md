@@ -40,7 +40,7 @@ export default telemetry;
 // your_app/src/Telemetry.ts
 import telemetry from './Telemetry'
 
-telemetry.setAccountId(accountId)
+telemetry.accountId = THE_ACCOUNT_ID
 ```
 
 4. Use the telemetry instance to call analytics methods.
