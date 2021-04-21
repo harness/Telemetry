@@ -1,6 +1,8 @@
 import Track from './types/Track'
 import Page from './types/Page'
 
+import initializeAnalytics from './analytics'
+
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -14,10 +16,15 @@ function isInitialized(): boolean {
 
 export default class Telemetry {
   analytics: Window['analytics']
+  accountId?: string
   initialized: boolean
   statusInterval?: number
 
-  constructor() {
+  constructor(sourceKey?: string) {
+    if (sourceKey) {
+      initializeAnalytics(sourceKey)
+    }
+
     this.analytics = window.analytics
     this.initialized = isInitialized()
 
@@ -26,14 +33,16 @@ export default class Telemetry {
     }
   }
 
-  augmentProperties(properties: { [key: string]: string }): { [key: string]: string } {
-    const accountId = localStorage.getItem('acctId')
+  set setAccountId(id: string) {
+    this.accountId = id
+  }
 
-    if (accountId) {
+  augmentProperties(properties: { [key: string]: string }): { [key: string]: string } {
+    if (this.accountId) {
       return {
         ...properties,
         url: window.location.href,
-        accountId
+        accountId: this.accountId
       }
     }
 

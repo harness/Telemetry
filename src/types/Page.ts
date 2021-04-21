@@ -4,6 +4,6 @@ interface Properties {
 
 export default interface Page {
   name: string
-  category: string
+  category?: string
   properties: Properties
 }

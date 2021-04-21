@@ -15,6 +15,42 @@ This allows consumers to avoid implementing and duplicating their own analytics 
 $ yarn
 ```
 
+## Using this package
+
+1. Install the package in your repository
+
+```
+$ yarn add @wings-software/telemetry
+```
+
+2. Initialize the Telemetry package at the entry point of your app and save it in a local file.
+
+```
+// your_app/src/Telemetry.ts
+import Telemetry from '@wings-software/Telemetry'
+
+const telemetry = new Telemetry(YOUR_WRITE_KEY)
+
+export default telemetry;
+```
+
+3. (OPTIONAL) Set the accountId.
+
+```
+// your_app/src/Telemetry.ts
+import telemetry from './Telemetry'
+
+telemetry.setAccountId(accountId)
+```
+
+4. Use the telemetry instance to call analytics methods.
+
+```
+import telemetry from './Telemetry'
+
+telemetry.track("signup", { email })
+```
+
 ## Contributing
 
 1. Submit a PR and bump the version number in package.json
