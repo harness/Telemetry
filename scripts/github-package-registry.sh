@@ -12,7 +12,7 @@ echo
 echo
 echo "All done. Token is saved in ~/.npmrc."
 
-echo "@wings-software:registry=https://npm.pkg.github.com" > ~/.npmrc
+echo "@harness:registry=https://npm.pkg.github.com" > ~/.npmrc
 echo "//npm.pkg.github.com/:_authToken="$githubToken >> ~/.npmrc
 echo "always-auth=true" >> ~/.npmrc
 

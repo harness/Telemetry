@@ -28,14 +28,14 @@ yarn add file:./../harness-telemetry // The path to your repo
 1. Install the package in your repository
 
 ```
-$ yarn add @wings-software/telemetry
+$ yarn add @harness/telemetry
 ```
 
 2. Initialize the Telemetry package at the entry point of your app and save it in a local file.
 
 ```
 // your_app/src/Telemetry.ts
-import Telemetry from '@wings-software/Telemetry'
+import Telemetry from '@harness/Telemetry'
 
 const telemetry = new Telemetry(YOUR_WRITE_KEY)
 
