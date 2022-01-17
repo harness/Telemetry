@@ -31,7 +31,7 @@
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
-    "husky": "^5.2.0",
+    "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "ts-loader": "^8.0.18",
@@ -40,6 +40,9 @@
     "webpack-cli": "^4.5.0"
   },
   "lint-staged": {
+    "*": [
+      "sh scripts/license/stamp.sh"
+    ],
     "*.ts": [
       "eslint",
       "prettier --write ."
