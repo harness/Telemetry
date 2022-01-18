@@ -5,7 +5,6 @@ This allows consumers to avoid implementing and duplicating their own analytics 
 
 ## Documentation
 
-[Design](https://harness.atlassian.net/wiki/spaces/GTM/pages/1484652596/Telemetry+Framework+Frontend)
 
 ## Local Development
 
@@ -62,6 +61,4 @@ telemetry.track("signup", { email })
 ## Contributing
 
 1. Submit a PR and bump the version number in package.json
-2. Run the [jenkins job](https://jenkinsk8s.harness.io/view/UI/job/telemetry-release/)
 
-The jenkins job will publish a new version to our npm registry.
