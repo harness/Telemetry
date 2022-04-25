@@ -7,6 +7,7 @@
 
 import Track from './types/Track'
 import Page from './types/Page'
+import Group from './types/Group'
 
 import initializeAnalytics from './analytics'
 
@@ -101,6 +102,14 @@ export default class Telemetry {
       const augmentedProperties = this.augmentProperties(properties)
 
       this.analytics.page(category, name, augmentedProperties, {}, {})
+    }
+  }
+
+  group(groupProperties: Group): void {
+    if (this.checkInitialized()) {
+      const { groupId, properties = {} } = groupProperties
+      const augmentedProperties = this.augmentProperties(properties)
+      this.analytics.group(groupId, augmentedProperties, {}, {})
     }
   }
 }
