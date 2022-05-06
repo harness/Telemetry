@@ -1,6 +1,6 @@
 {
   "name": "@harness/telemetry",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "An analytics wrapper for front end Harness applications",
   "source": "src/index.ts",
   "main": "dist/index.js",
