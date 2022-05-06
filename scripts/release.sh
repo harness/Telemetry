@@ -23,7 +23,7 @@ yarn build
 
 # Force adding ./dist into git because it's in .gitignore
 git add -f ./dist/*
-git commit . -m"Release version: v$VERSION"
+git commit . -m"Release version: v$VERSION" -n
 
 
 
