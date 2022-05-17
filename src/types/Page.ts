@@ -13,4 +13,6 @@ export default interface Page {
   name: string
   category?: string
   properties: Properties
+  options?: Record<string, string>
+  callback?: () => void
 }

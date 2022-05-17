@@ -5,6 +5,7 @@
  * https://polyformproject.org/wp-content/uploads/2020/06/PolyForm-Shield-1.0.0.txt.
  */
 
+import Identity from 'types/Identity'
 import Track from './types/Track'
 import Page from './types/Page'
 import Group from './types/Group'
@@ -79,37 +80,39 @@ export default class Telemetry {
     return false
   }
 
-  identify(userId: string): void {
+  identify(identity: Identity): void {
     if (this.checkInitialized()) {
-      this.analytics.identify(userId, null, {}, {})
+      const { userId, properties = {}, options, callback } = identity
+      const augmentedProperties = this.augmentProperties(properties)
+      this.analytics.identify(userId, augmentedProperties, options, callback)
     }
   }
 
   track(track: Track): void {
     if (this.checkInitialized()) {
-      const { event, properties } = track
+      const { event, properties, options, callback } = track
 
       const augmentedProperties = this.augmentProperties(properties)
 
-      this.analytics.track(event, augmentedProperties, {}, {})
+      this.analytics.track(event, augmentedProperties, options, callback)
     }
   }
 
   page(page: Page): void {
     if (this.checkInitialized()) {
-      const { name, category, properties } = page
+      const { name, category, properties, options, callback } = page
 
       const augmentedProperties = this.augmentProperties(properties)
 
-      this.analytics.page(category, name, augmentedProperties, {}, {})
+      this.analytics.page(category, name, augmentedProperties, options, callback)
     }
   }
 
   group(groupProperties: Group): void {
     if (this.checkInitialized()) {
-      const { groupId, properties = {} } = groupProperties
+      const { groupId, properties = {}, options, callback } = groupProperties
       const augmentedProperties = this.augmentProperties(properties)
-      this.analytics.group(groupId, augmentedProperties, {}, {})
+      this.analytics.group(groupId, augmentedProperties, options, callback)
     }
   }
 }
