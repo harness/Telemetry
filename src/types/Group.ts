@@ -8,4 +8,6 @@
 export default interface Group {
   groupId: string
   properties?: Record<string, string>
+  options?: Record<string, string>
+  callback?: () => void
 }
