@@ -84,6 +84,7 @@ export default class Telemetry {
     if (this.checkInitialized()) {
       const { userId, properties = {}, options, callback } = identity
       const augmentedProperties = this.augmentProperties(properties)
+      delete augmentedProperties.url
       this.analytics.identify(userId, augmentedProperties, options, callback)
     }
   }
@@ -112,6 +113,7 @@ export default class Telemetry {
     if (this.checkInitialized()) {
       const { groupId, properties = {}, options, callback } = groupProperties
       const augmentedProperties = this.augmentProperties(properties)
+      delete augmentedProperties.url
       this.analytics.group(groupId, augmentedProperties, options, callback)
     }
   }
