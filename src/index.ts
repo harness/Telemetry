@@ -81,40 +81,32 @@ export default class Telemetry {
   }
 
   identify(identity: Identity): void {
-    if (this.checkInitialized()) {
-      const { userId, properties = {}, options, callback } = identity
-      const augmentedProperties = this.augmentProperties(properties)
-      delete augmentedProperties.url
-      this.analytics.identify(userId, augmentedProperties, options, callback)
-    }
+    const { userId, properties = {}, options, callback } = identity
+    const augmentedProperties = this.augmentProperties(properties)
+    delete augmentedProperties.url
+    this.analytics.identify(userId, augmentedProperties, options, callback)
   }
 
   track(track: Track): void {
-    if (this.checkInitialized()) {
-      const { event, properties, options, callback } = track
+    const { event, properties, options, callback } = track
 
-      const augmentedProperties = this.augmentProperties(properties)
+    const augmentedProperties = this.augmentProperties(properties)
 
-      this.analytics.track(event, augmentedProperties, options, callback)
-    }
+    this.analytics.track(event, augmentedProperties, options, callback)
   }
 
   page(page: Page): void {
-    if (this.checkInitialized()) {
-      const { name, category, properties, options, callback } = page
+    const { name, category, properties, options, callback } = page
 
-      const augmentedProperties = this.augmentProperties(properties)
+    const augmentedProperties = this.augmentProperties(properties)
 
-      this.analytics.page(category, name, augmentedProperties, options, callback)
-    }
+    this.analytics.page(category, name, augmentedProperties, options, callback)
   }
 
   group(groupProperties: Group): void {
-    if (this.checkInitialized()) {
-      const { groupId, properties = {}, options, callback } = groupProperties
-      const augmentedProperties = this.augmentProperties(properties)
-      delete augmentedProperties.url
-      this.analytics.group(groupId, augmentedProperties, options, callback)
-    }
+    const { groupId, properties = {}, options, callback } = groupProperties
+    const augmentedProperties = this.augmentProperties(properties)
+    delete augmentedProperties.url
+    this.analytics.group(groupId, augmentedProperties, options, callback)
   }
 }
