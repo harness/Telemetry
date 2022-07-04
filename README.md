@@ -7,7 +7,6 @@ This allows consumers to avoid implementing and duplicating their own analytics 
 
 ## Documentation
 
-
 ## Local Development
 
 1. Install the dependencies
@@ -60,7 +59,14 @@ import telemetry from './Telemetry'
 telemetry.track("signup", { email })
 ```
 
+## Publishing the Package
+
+1. Run following command in terminal from project directory.
+
+```
+$ yarn build && yarn publish
+```
+
 ## Contributing
 
 1. Submit a PR and bump the version number in package.json
-
