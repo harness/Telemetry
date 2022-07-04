@@ -28,10 +28,12 @@ export default class Telemetry {
   accountId?: string
   initialized: boolean
   statusInterval?: number
+  hasSourceKey?: boolean
 
   constructor(sourceKey?: string) {
     if (sourceKey) {
       initializeAnalytics(sourceKey)
+      this.hasSourceKey = true
     }
 
     this.analytics = window.analytics
@@ -81,6 +83,9 @@ export default class Telemetry {
   }
 
   identify(identity: Identity): void {
+    if (!this.hasSourceKey) {
+      return
+    }
     const { userId, properties = {}, options, callback } = identity
     const augmentedProperties = this.augmentProperties(properties)
     delete augmentedProperties.url
@@ -88,6 +93,9 @@ export default class Telemetry {
   }
 
   track(track: Track): void {
+    if (!this.hasSourceKey) {
+      return
+    }
     const { event, properties, options, callback } = track
 
     const augmentedProperties = this.augmentProperties(properties)
@@ -96,6 +104,9 @@ export default class Telemetry {
   }
 
   page(page: Page): void {
+    if (!this.hasSourceKey) {
+      return
+    }
     const { name, category, properties, options, callback } = page
 
     const augmentedProperties = this.augmentProperties(properties)
@@ -104,6 +115,9 @@ export default class Telemetry {
   }
 
   group(groupProperties: Group): void {
+    if (!this.hasSourceKey) {
+      return
+    }
     const { groupId, properties = {}, options, callback } = groupProperties
     const augmentedProperties = this.augmentProperties(properties)
     delete augmentedProperties.url
